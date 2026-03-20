@@ -1,0 +1,23 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Agent files
+.gemini/
+.agent/
+.agents/
+_agent/
+_agents/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log

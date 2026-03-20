@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enigma Sports — Brand Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #0A0A0A;
+      --surface:        #111111;
+      --elevated:       #1A1A1A;
+      --border:         #222222;
+      --border-subtle:  #1C1C1C;
+      --accent:         #C8102E;
+      --accent-muted:   #8B0B1F;
+      --accent-subtle:  rgba(200,16,46,0.08);
+      --text-primary:   #F0EDE8;
+      --text-secondary: #C2BDB8;
+      --text-muted:     #8C8884;
+      --font-display:   'Bebas Neue', sans-serif;
+      --font-body:      'DM Sans', sans-serif;
+      --font-mono:      'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    ::selection { background: var(--accent-muted); color: var(--text-primary); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; max-width: 1200px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-diamond {
+      width: 28px; height: 28px;
+      border: 1.5px solid var(--accent);
+      transform: rotate(45deg);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-diamond-inner {
+      width: 8px; height: 8px;
+      background: var(--accent);
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 20px; letter-spacing: 0.15em;
+      color: var(--text-primary);
+    }
+    nav { display: flex; }
+    .tab-btn {
+      padding: 0 20px; height: 64px;
+      font-family: var(--font-body); font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); background: none; border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer; transition: color 0.2s, border-color 0.2s;
+      font-weight: 500;
+    }
+    .tab-btn:hover { color: var(--text-primary); }
+    .tab-btn.active { color: var(--text-primary); border-bottom-color: var(--accent); }
+    .header-version {
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--text-secondary); letter-spacing: 0.03em;
+    }
+
+    /* ── MAIN ── */
+    main { max-width: 1200px; margin: 0 auto; padding: 72px 48px; }
+
+    /* ── PANELS ── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 80px; }
+    .section-title-row {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 40px;
+    }
+    .section-accent-bar { width: 3px; height: 20px; background: var(--accent); flex-shrink: 0; }
+    .section-label {
+      font-family: var(--font-body); font-size: 13px;
+      letter-spacing: 0.1em; color: var(--text-secondary);
+      text-transform: uppercase; font-weight: 600;
+    }
+    .divider { border-top: 1px solid var(--border-subtle); margin: 0 0 80px; }
+
+    /* ── PAGE HEADING ── */
+    .page-intro { margin-bottom: 80px; }
+    .page-tag {
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--accent); letter-spacing: 0.15em;
+      text-transform: uppercase; margin-bottom: 20px; font-weight: 500;
+    }
+    .page-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 8vw, 96px);
+      letter-spacing: 0.04em; line-height: 1;
+      color: var(--text-primary); margin-bottom: 28px;
+    }
+    .page-lead {
+      font-size: 19px; font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 560px; line-height: 1.75;
+    }
+    .section-h2 {
+      font-family: var(--font-display);
+      font-size: 48px; letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+    .section-intro {
+      color: var(--text-secondary); font-size: 17px;
+      font-weight: 400; line-height: 1.75;
+      margin-bottom: 56px;
+    }
+
+    /* ── PRINCIPLE CARDS ── */
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+    }
+    .principle-card {
+      padding: 32px; background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+    .principle-num {
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--accent); margin-bottom: 16px; letter-spacing: 0.06em; font-weight: 700;
+    }
+    .principle-title {
+      font-family: var(--font-display); font-size: 22px;
+      letter-spacing: 0.1em; margin-bottom: 14px;
+    }
+    .principle-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 400; }
+
+    /* ── CTA BOX ── */
+    .cta-box {
+      padding: 40px; background: var(--surface);
+      border: 1px solid var(--border); margin-bottom: 2px;
+    }
+    .cta-box-title {
+      font-family: var(--font-display); font-size: 28px;
+      letter-spacing: 0.08em; margin-bottom: 16px;
+    }
+    .cta-box-body {
+      font-size: 16px; color: var(--text-secondary);
+      line-height: 1.8; font-weight: 400;
+      max-width: 580px; margin-bottom: 32px;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn-primary {
+      background: var(--accent); color: #fff; border: none;
+      padding: 15px 36px; font-family: var(--font-body);
+      font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+      transition: background 0.2s, transform 0.15s; font-weight: 600;
+    }
+    .btn-primary:hover { background: var(--accent-muted); transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text-primary);
+      border: 1px solid var(--border); padding: 15px 36px;
+      font-family: var(--font-body); font-size: 13px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+      transition: background 0.2s; font-weight: 500;
+    }
+    .btn-ghost:hover { background: var(--elevated); }
+    .btn-text-link {
+      background: transparent; color: var(--text-secondary); border: none;
+      padding: 15px 0; font-family: var(--font-body); font-size: 13px;
+      letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+      border-bottom: 1px solid var(--text-muted);
+      display: inline-flex; align-items: center; gap: 8px; font-weight: 500;
+    }
+    .whatsapp-dot { color: #25D366; }
+    .accent-arrow { color: var(--accent); }
+    .info-strip {
+      padding: 20px 24px; background: var(--accent-subtle);
+      border-left: 2px solid var(--accent);
+    }
+    .info-strip p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 400; }
+    .info-strip strong { color: var(--text-primary); font-weight: 500; }
+
+    /* ── LOGO USAGE ── */
+    .logo-row { display: flex; flex-wrap: wrap; gap: 2px; }
+    .logo-variant { flex: 1; min-width: 240px; }
+    .logo-preview {
+      padding: 48px 32px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-preview-inner { display: flex; align-items: center; gap: 10px; }
+    .logo-preview-diamond {
+      width: 24px; height: 24px;
+      border: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-preview-dot { width: 7px; height: 7px; }
+    .logo-preview-text {
+      font-family: var(--font-display); font-size: 18px;
+      letter-spacing: 0.15em;
+    }
+    .logo-caption {
+      padding: 14px 16px; background: var(--surface);
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--text-secondary); font-weight: 500;
+    }
+
+    /* ── COLOR SWATCHES ── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 24px;
+    }
+    .swatch { display: flex; flex-direction: column; gap: 10px; }
+    .swatch-color {
+      width: 100%; height: 72px;
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .swatch-accent-line {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--accent);
+    }
+    .swatch-hex { font-family: var(--font-body); font-size: 13px; color: var(--text-primary); margin-bottom: 3px; font-weight: 500; }
+    .swatch-name { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+    .swatch-role { font-size: 13px; color: var(--text-secondary); }
+
+    /* ── TYPE SAMPLES ── */
+    .type-sample {
+      padding: 28px 32px; background: var(--surface);
+      border: 1px solid var(--border); margin-bottom: 2px;
+    }
+    .type-meta {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; margin-bottom: 14px;
+    }
+    .type-label {
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+    }
+    .type-info { font-family: var(--font-body); font-size: 13px; color: var(--text-secondary); }
+
+    /* ── TYPE SCALE ── */
+    .scale-table { background: var(--surface); border: 1px solid var(--border); overflow: hidden; }
+    .scale-row {
+      display: flex; align-items: center; padding: 16px 28px; gap: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .scale-row:last-child { border-bottom: none; }
+    .scale-name { font-family: var(--font-body); font-size: 13px; color: var(--text-secondary); width: 56px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .scale-size { font-family: var(--font-body); font-size: 13px; color: var(--text-secondary); margin-left: auto; }
+
+    /* ── COMPONENT CARDS ── */
+    .comp-box {
+      padding: 36px; background: var(--surface);
+      border: 1px solid var(--border); margin-bottom: 2px;
+    }
+    .comp-box-body { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 400; margin-bottom: 28px; }
+    .ui-card-row { display: flex; flex-wrap: wrap; gap: 2px; max-width: 600px; }
+    .ui-card {
+      padding: 32px; background: var(--surface);
+      border: 1px solid var(--border); flex: 1; min-width: 280px;
+    }
+    .ui-card-title {
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--text-secondary); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 24px; font-weight: 600;
+    }
+
+    /* ── PRODUCT CARDS ── */
+    .product-grid { display: flex; flex-wrap: wrap; gap: 2px; max-width: 720px; }
+    .product-card {
+      flex: 1; min-width: 260px; background: var(--surface);
+      border: 1px solid var(--border); cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .product-card:hover { border-color: #333; transform: translateY(-2px); }
+    .product-image {
+      height: 280px; background: var(--elevated);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .product-placeholder { color: var(--text-muted); font-family: var(--font-body); font-size: 12px; }
+    .product-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: var(--accent); color: #fff;
+      font-family: var(--font-body); font-size: 12px;
+      letter-spacing: 0.08em; padding: 4px 10px; font-weight: 700;
+    }
+    .product-info { padding: 20px 24px 24px; }
+    .product-name {
+      font-family: var(--font-display); font-size: 20px;
+      letter-spacing: 0.08em; margin-bottom: 6px;
+    }
+    .product-colors {
+      font-family: var(--font-body); font-size: 14px;
+      color: var(--text-secondary); letter-spacing: 0.05em; margin-bottom: 18px; font-weight: 400;
+    }
+    .product-enquire {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--text-secondary); font-family: var(--font-body);
+      font-size: 13px; letter-spacing: 0.05em; cursor: pointer; font-weight: 500;
+    }
+
+    /* ── INPUT ── */
+    .enquiry-input {
+      width: 100%; background: var(--elevated);
+      border: 1px solid var(--border); color: var(--text-primary);
+      padding: 14px 16px; font-family: var(--font-body);
+      font-size: 14px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .enquiry-input:focus { border-color: var(--accent); }
+    .input-hint { margin-top: 8px; font-family: var(--font-body); font-size: 13px; color: var(--text-muted); }
+
+    /* ── TAGS ── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      padding: 6px 14px; background: var(--elevated);
+      border: 1px solid var(--border); font-family: var(--font-body);
+      font-size: 12px; letter-spacing: 0.05em;
+      color: var(--text-secondary); text-transform: uppercase; font-weight: 500;
+    }
+    .tag.accent {
+      background: var(--accent-subtle);
+      border-color: var(--accent-muted);
+      color: var(--accent);
+    }
+
+    /* ── NAVBAR DEMO ── */
+    .navbar-demo {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 0 32px; display: flex; align-items: center;
+      justify-content: space-between; height: 62px;
+    }
+    .navbar-logo { display: flex; align-items: center; gap: 8px; }
+    .navbar-diamond {
+      width: 20px; height: 20px;
+      border: 1.5px solid var(--accent);
+      transform: rotate(45deg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .navbar-diamond-dot { width: 6px; height: 6px; background: var(--accent); }
+    .navbar-brand { font-family: var(--font-display); font-size: 16px; letter-spacing: 0.15em; }
+    .navbar-links { display: flex; gap: 32px; }
+    .navbar-link {
+      font-family: var(--font-body); font-size: 13px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted); cursor: pointer;
+      transition: color 0.2s; text-decoration: none; font-weight: 500;
+    }
+    .navbar-link:hover, .navbar-link.active { color: var(--accent); }
+    .navbar-actions { display: flex; gap: 12px; align-items: center; }
+    .navbar-contact {
+      font-family: var(--font-body); font-size: 13px;
+      letter-spacing: 0.05em; color: var(--text-muted); cursor: pointer; font-weight: 500;
+    }
+    .navbar-cta {
+      background: var(--accent); color: #fff; border: none;
+      padding: 8px 20px; font-family: var(--font-body);
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.2s; font-weight: 600;
+    }
+    .navbar-cta:hover { background: var(--accent-muted); }
+
+    /* ── MOCKUP ── */
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+    }
+    .standard-card {
+      padding: 28px 32px; background: var(--surface);
+      border-top: 2px solid var(--border-subtle);
+    }
+    .standard-title {
+      font-family: var(--font-display); font-size: 18px;
+      letter-spacing: 0.1em; margin-bottom: 12px;
+    }
+    .standard-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 400; }
+
+    .mockup-frames { display: flex; gap: 2px; flex-wrap: wrap; }
+    .mockup-frame { flex: 1; min-width: 200px; }
+    .mockup-preview {
+      background: #F8F6F3; height: 320px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .mockup-outline {
+      width: 80px; height: 100px;
+      border: 1px dashed #CCC;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mockup-outline-label { font-family: var(--font-body); font-size: 11px; color: #AAA; }
+    .mockup-zoom {
+      position: absolute; bottom: 16px; right: 16px;
+      width: 48px; height: 48px; border: 1px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mockup-zoom-label { font-family: var(--font-body); font-size: 10px; color: var(--accent); font-weight: 600; }
+    .mockup-caption {
+      padding: 12px 16px; background: var(--surface);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .mockup-caption-label { font-family: var(--font-body); font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; font-weight: 600; text-transform: uppercase; }
+    .mockup-caption-primary { font-family: var(--font-body); font-size: 13px; color: var(--accent); font-weight: 600; }
+
+    .branding-grid {
+      padding: 32px; background: var(--surface);
+      border: 1px solid var(--border);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    }
+    .branding-rule-label {
+      font-family: var(--font-body); font-size: 12px;
+      color: var(--accent); letter-spacing: 0.1em; margin-bottom: 10px;
+      text-transform: uppercase; font-weight: 600;
+    }
+    .branding-rule-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; font-weight: 400; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 8px; }
+    .footer-diamond {
+      width: 16px; height: 16px;
+      border: 1px solid var(--accent);
+      transform: rotate(45deg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-diamond-dot { width: 5px; height: 5px; background: var(--accent); }
+    .footer-brand { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.15em; color: var(--text-muted); }
+    .footer-copy { font-family: var(--font-body); font-size: 13px; color: var(--text-muted); }
+    .footer-badge { display: flex; gap: 6px; align-items: center; }
+    .footer-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+    .footer-internal { font-family: var(--font-body); font-size: 13px; color: var(--text-muted); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      main { padding: 48px 20px; }
+      .header-version { display: none; }
+      .tab-btn { padding: 0 12px; font-size: 12px; }
+      .branding-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-diamond"><div class="logo-diamond-inner"></div></div>
+      <span class="logo-text">ENIGMA SPORTS</span>
+    </div>
+    <nav>
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="colors">Colors</button>
+      <button class="tab-btn" data-tab="typography">Typography</button>
+      <button class="tab-btn" data-tab="components">Components</button>
+      <button class="tab-btn" data-tab="mockup">Mockup</button>
+    </nav>
+    <div class="header-version">v1.0 · 2025</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══════════════════════════════════════ OVERVIEW ═══ -->
+  <div class="panel active" id="panel-overview">
+
+    <div class="page-intro">
+      <div class="page-tag">Brand Design System</div>
+      <h1 class="page-h1">ENIGMA<br>SPORTS</h1>
+      <p class="page-lead">A unified design language built on restraint, precision, and quiet authority. Every element serves a purpose. Nothing is decorative for its own sake.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Brand Principles -->
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Brand Principles</span>
+      </div>
+      <div class="principle-grid">
+        <div class="principle-card">
+          <div class="principle-num">01</div>
+          <div class="principle-title">RESTRAINT</div>
+          <p class="principle-desc">Less is more. Every element earns its place. White space is not empty — it is intentional.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">02</div>
+          <div class="principle-title">PRECISION</div>
+          <p class="principle-desc">Exact spacing, exact weights, exact color values. Consistency is the foundation of trust.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">03</div>
+          <div class="principle-title">AUTHORITY</div>
+          <p class="principle-desc">Bold typography and confident layouts communicate quality before a word is read.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-num">04</div>
+          <div class="principle-title">ENERGY</div>
+          <p class="principle-desc">The red accent is a pulse — used sparingly so it always commands attention.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Model -->
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Call to Action — Contact Model</span>
+      </div>
+      <div class="cta-box">
+        <div class="cta-box-title">NO DIRECT ORDERING</div>
+        <p class="cta-box-body">Enigma Sports operates on a consultation model. Visitors are guided to reach out directly for samples, bulk orders, and custom quotes. All CTAs lead to email or WhatsApp — never a cart.</p>
+        <div class="cta-row">
+          <button class="btn-primary"><span>✉</span> Request a Quote</button>
+          <button class="btn-ghost"><span class="whatsapp-dot">◉</span> WhatsApp Us</button>
+        </div>
+      </div>
+      <div class="info-strip">
+        <p><strong>Rule:</strong> Never display individual product prices on the website. Direct all purchasing intent to email or WhatsApp for negotiation, sample orders, and bulk quotations.</p>
+      </div>
+    </div>
+
+    <!-- Logo Usage -->
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Logo Usage</span>
+      </div>
+      <div class="logo-row">
+        <div class="logo-variant">
+          <div class="logo-preview" style="background:#0A0A0A;">
+            <div class="logo-preview-inner" style="color:#C8102E;">
+              <div class="logo-preview-diamond"><div class="logo-preview-dot" style="background:#C8102E;"></div></div>
+              <span class="logo-preview-text" style="color:#F0EDE8;">ENIGMA SPORTS</span>
+            </div>
+          </div>
+          <div class="logo-caption">Dark Background (Primary)</div>
+        </div>
+        <div class="logo-variant">
+          <div class="logo-preview" style="background:#F0EDE8;">
+            <div class="logo-preview-inner" style="color:#0A0A0A;">
+              <div class="logo-preview-diamond" style="border-color:#0A0A0A;"><div class="logo-preview-dot" style="background:#0A0A0A;"></div></div>
+              <span class="logo-preview-text" style="color:#0A0A0A;">ENIGMA SPORTS</span>
+            </div>
+          </div>
+          <div class="logo-caption">Light Background</div>
+        </div>
+        <div class="logo-variant">
+          <div class="logo-preview" style="background:#C8102E;">
+            <div class="logo-preview-inner" style="color:#F0EDE8;">
+              <div class="logo-preview-diamond" style="border-color:#F0EDE8;"><div class="logo-preview-dot" style="background:#F0EDE8;"></div></div>
+              <span class="logo-preview-text" style="color:#F0EDE8;">ENIGMA SPORTS</span>
+            </div>
+          </div>
+          <div class="logo-caption">Accent (Sparingly)</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /overview -->
+
+
+  <!-- ═══════════════════════════════════════ COLORS ═══ -->
+  <div class="panel" id="panel-colors">
+    <h2 class="section-h2">COLOR SYSTEM</h2>
+    <p class="section-intro">Dark foundations with a single, disciplined accent. Red is reserved — it should always feel like a signal.</p>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Foundation</span>
+      </div>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#0A0A0A;"></div>
+          <div class="swatch-hex">#0A0A0A</div>
+          <div class="swatch-name">Void</div>
+          <div class="swatch-role">Page Background</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#111111;"></div>
+          <div class="swatch-hex">#111111</div>
+          <div class="swatch-name">Surface</div>
+          <div class="swatch-role">Card / Panel BG</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#1A1A1A;"></div>
+          <div class="swatch-hex">#1A1A1A</div>
+          <div class="swatch-name">Elevated</div>
+          <div class="swatch-role">Hover / Raised</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#222222;"></div>
+          <div class="swatch-hex">#222222</div>
+          <div class="swatch-name">Border</div>
+          <div class="swatch-role">UI Dividers</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Accent — Use Sparingly</span>
+      </div>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#C8102E;"><div class="swatch-accent-line"></div></div>
+          <div class="swatch-hex">#C8102E</div>
+          <div class="swatch-name">Enigma Red</div>
+          <div class="swatch-role">Primary Accent</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8B0B1F;"><div class="swatch-accent-line"></div></div>
+          <div class="swatch-hex">#8B0B1F</div>
+          <div class="swatch-name">Deep Red</div>
+          <div class="swatch-role">Hover / Active</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:rgba(200,16,46,0.08); border:1px solid #333;"></div>
+          <div class="swatch-hex">rgba(200,16,46,0.08)</div>
+          <div class="swatch-name">Red Wash</div>
+          <div class="swatch-role">Subtle BG Tint</div>
+        </div>
+      </div>
+      <div class="info-strip" style="margin-top:24px;">
+        <p><strong>Usage rule:</strong> Red accent should appear on no more than one element per viewport. Use it for CTAs, active states, or a single highlight. Never use it for decoration alone.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Typography Colors</span>
+      </div>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#F0EDE8;"></div>
+          <div class="swatch-hex">#F0EDE8</div>
+          <div class="swatch-name">Warm White</div>
+          <div class="swatch-role">Primary Text</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#8A8480;"></div>
+          <div class="swatch-hex">#8A8480</div>
+          <div class="swatch-name">Stone</div>
+          <div class="swatch-role">Secondary Text</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#4A4744;"></div>
+          <div class="swatch-hex">#4A4744</div>
+          <div class="swatch-name">Ash</div>
+          <div class="swatch-role">Muted / Labels</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /colors -->
+
+
+  <!-- ═══════════════════════════════════════ TYPOGRAPHY ═══ -->
+  <div class="panel" id="panel-typography">
+    <h2 class="section-h2">TYPOGRAPHY</h2>
+    <p class="section-intro">Two typefaces. Bebas Neue for bold display, DM Sans for clean readable body copy throughout.</p>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Display — Bebas Neue</span>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Display / Hero</span>
+          <span class="type-info">Bebas Neue · 400 · 72px</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:72px;color:var(--text-primary);line-height:1.1;">PERFORMANCE DEFINED</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Section Heading</span>
+          <span class="type-info">Bebas Neue · 400 · 48px</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:48px;color:var(--text-primary);line-height:1.1;">BUILT TO LAST</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Sub-heading</span>
+          <span class="type-info">Bebas Neue · 400 · 32px</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:32px;color:var(--text-primary);line-height:1.1;">NEW ARRIVALS · SPRING 2025</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Body — DM Sans</span>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Lead / Intro</span>
+          <span class="type-info">DM Sans · 400 · 22px</span>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:400;color:var(--text-primary);line-height:1.6;">Crafted for those who refuse to settle. Every stitch, every seam — a statement.</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Body Regular</span>
+          <span class="type-info">DM Sans · 400 · 17px</span>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:400;color:var(--text-primary);line-height:1.8;">Enigma Sports blends technical performance with refined aesthetics. Our garments move with you, not against you — engineered to perform at every level.</div>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Body Emphasis</span>
+          <span class="type-info">DM Sans · 600 · 15px</span>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--text-primary);line-height:1.75;">Premium materials. Uncompromising fit. Built for the athlete in every season.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">UI Label — DM Sans</span>
+      </div>
+      <div class="type-sample">
+        <div class="type-meta">
+          <span class="type-label">Label / Tag / Caption</span>
+          <span class="type-info">DM Sans · 500 · 13px</span>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-primary);line-height:1.5;">PRODUCT CODE: ES-2025-004 · SIZE: M · COLORWAY: ONYX</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Scale Reference</span>
+      </div>
+      <div class="scale-table">
+        <div class="scale-row">
+          <span class="scale-name">Hero</span>
+          <span style="font-family:var(--font-display);font-size:96px;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">96px</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-name">H1</span>
+          <span style="font-family:var(--font-display);font-size:64px;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">64px</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-name">H2</span>
+          <span style="font-family:var(--font-display);font-size:40px;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">40px</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-name">H3</span>
+          <span style="font-family:var(--font-display);font-size:28px;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">28px</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-name">Lead</span>
+          <span style="font-family:'DM Sans',sans-serif;font-size:22px;font-weight:400;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">22px</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-name">Body</span>
+          <span style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:400;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">17px</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-name">Label</span>
+          <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--text-primary);line-height:1;">Aa</span>
+          <span class="scale-size">13px</span>
+        </div>
+      </div>
+    </div>
+  </div><!-- /typography -->
+
+
+  <!-- ═══════════════════════════════════════ COMPONENTS ═══ -->
+  <div class="panel" id="panel-components">
+    <h2 class="section-h2">UI COMPONENTS</h2>
+    <p class="section-intro">Precise, functional, minimal. Each component stripped to its essential form.</p>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Primary CTAs — Contact Only</span>
+      </div>
+      <div class="comp-box">
+        <p class="comp-box-body">All purchase intent is directed to direct contact. The two primary CTA variants below are the <em>only</em> conversion actions used sitewide.</p>
+        <div class="cta-row">
+          <button class="btn-primary"><span>✉</span> Request a Quote</button>
+          <button class="btn-ghost"><span class="whatsapp-dot">◉</span> WhatsApp Us</button>
+          <button class="btn-text-link">Order Samples <span class="accent-arrow">→</span></button>
+        </div>
+      </div>
+      <div class="info-strip">
+        <p><strong>Never use:</strong> "Add to Cart", "Buy Now", "Checkout", or any price display. All product pages end with an enquiry CTA.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Product Card — No Price</span>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-placeholder">[ PRODUCT IMAGE ]</span>
+            <div class="product-badge">NEW</div>
+          </div>
+          <div class="product-info">
+            <div class="product-name">PERFORMANCE TEE</div>
+            <div class="product-colors">ONYX · OBSIDIAN · SLATE</div>
+            <div class="product-enquire">Enquire for pricing <span class="accent-arrow">→</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-placeholder">[ PRODUCT IMAGE ]</span>
+            <div class="product-badge">NEW</div>
+          </div>
+          <div class="product-info">
+            <div class="product-name">TRACK JACKET</div>
+            <div class="product-colors">ONYX · OBSIDIAN · SLATE</div>
+            <div class="product-enquire">Enquire for pricing <span class="accent-arrow">→</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Form Elements</span>
+      </div>
+      <div class="ui-card-row">
+        <div class="ui-card">
+          <div class="ui-card-title">Enquiry / Contact Input</div>
+          <input class="enquiry-input" type="text" placeholder="Your email or WhatsApp number..." />
+          <div class="input-hint">Focus state uses accent red border</div>
+        </div>
+        <div class="ui-card">
+          <div class="ui-card-title">Tag / Badge</div>
+          <div class="tag-row">
+            <span class="tag">Bulk Orders</span>
+            <span class="tag">Custom Samples</span>
+            <span class="tag accent">B2B</span>
+            <span class="tag">MOQ Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Navigation Bar</span>
+      </div>
+      <div class="navbar-demo">
+        <div class="navbar-logo">
+          <div class="navbar-diamond"><div class="navbar-diamond-dot"></div></div>
+          <span class="navbar-brand">ENIGMA SPORTS</span>
+        </div>
+        <div class="navbar-links">
+          <a class="navbar-link active">Men</a>
+          <a class="navbar-link">Women</a>
+          <a class="navbar-link">Sport</a>
+          <a class="navbar-link">About</a>
+        </div>
+        <div class="navbar-actions">
+          <span class="navbar-contact">✉ Contact</span>
+          <button class="navbar-cta">Get a Quote</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /components -->
+
+
+  <!-- ═══════════════════════════════════════ MOCKUP ═══ -->
+  <div class="panel" id="panel-mockup">
+    <h2 class="section-h2">CLOTHING MOCKUP STYLE</h2>
+    <p class="section-intro">Clean studio presentation. Every garment photographed to the same standard.</p>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Photography Standards</span>
+      </div>
+      <div class="standards-grid">
+        <div class="standard-card">
+          <div class="standard-title">BACKGROUND</div>
+          <p class="standard-desc">Pure white (#FFFFFF) or off-white (#F8F6F3). No gradients, no shadows on backdrop.</p>
+        </div>
+        <div class="standard-card">
+          <div class="standard-title">LIGHTING</div>
+          <p class="standard-desc">Soft, even diffused lighting. No harsh shadows. Subtle shadow beneath garment for depth only.</p>
+        </div>
+        <div class="standard-card">
+          <div class="standard-title">SHOT ANGLES</div>
+          <p class="standard-desc">Front flat-lay, front ghost mannequin, and back ghost mannequin for every SKU.</p>
+        </div>
+        <div class="standard-card">
+          <div class="standard-title">COMPOSITION</div>
+          <p class="standard-desc">Centered. 10% padding on all sides minimum. No cropping of garment edges.</p>
+        </div>
+        <div class="standard-card">
+          <div class="standard-title">COLOR ACCURACY</div>
+          <p class="standard-desc">Calibrated to sRGB. All colorways shot under identical conditions. No retouching of color.</p>
+        </div>
+        <div class="standard-card">
+          <div class="standard-title">RESOLUTION</div>
+          <p class="standard-desc">Minimum 2000×2500px. Exported as sRGB JPEG 90% or WebP for web, PNG for print.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Mockup Frame Example</span>
+      </div>
+      <div class="mockup-frames">
+        <div class="mockup-frame">
+          <div class="mockup-preview">
+            <div class="mockup-outline"><span class="mockup-outline-label">garment</span></div>
+          </div>
+          <div class="mockup-caption">
+            <span class="mockup-caption-label">FRONT</span>
+            <span class="mockup-caption-primary">PRIMARY</span>
+          </div>
+        </div>
+        <div class="mockup-frame">
+          <div class="mockup-preview">
+            <div class="mockup-outline" style="border-color:#DDD;"><span class="mockup-outline-label">garment</span></div>
+          </div>
+          <div class="mockup-caption">
+            <span class="mockup-caption-label">BACK</span>
+          </div>
+        </div>
+        <div class="mockup-frame">
+          <div class="mockup-preview">
+            <div class="mockup-outline" style="border-color:#DDD;"><span class="mockup-outline-label">garment</span></div>
+            <div class="mockup-zoom"><span class="mockup-zoom-label">zoom</span></div>
+          </div>
+          <div class="mockup-caption">
+            <span class="mockup-caption-label">DETAIL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title-row">
+        <div class="section-accent-bar"></div>
+        <span class="section-label">Branding on Product</span>
+      </div>
+      <div class="branding-grid">
+        <div>
+          <div class="branding-rule-label">Logo Placement</div>
+          <p class="branding-rule-desc">Left chest or center nape. Never centered on front unless the design calls for it explicitly.</p>
+        </div>
+        <div>
+          <div class="branding-rule-label">Label Color</div>
+          <p class="branding-rule-desc">Woven label in black fabric, white text. Accent label variant uses a single red thread line only.</p>
+        </div>
+        <div>
+          <div class="branding-rule-label">Tag Design</div>
+          <p class="branding-rule-desc">Hang tag in black matte cardstock. Logotype in white Bebas Neue. SKU in Courier. Red cord only.</p>
+        </div>
+        <div>
+          <div class="branding-rule-label">Embroidery</div>
+          <p class="branding-rule-desc">Diamond logomark at 18px equivalent on physical scale. Never printed — always embroidered or woven.</p>
+        </div>
+      </div>
+    </div>
+  </div><!-- /mockup -->
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-diamond"><div class="footer-diamond-dot"></div></div>
+    <span class="footer-brand">ENIGMA SPORTS</span>
+  </div>
+  <span class="footer-copy">Brand Design System · v1.0 · Confidential</span>
+  <div class="footer-badge">
+    <div class="footer-dot"></div>
+    <span class="footer-internal">Internal Use Only</span>
+  </div>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + target).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
