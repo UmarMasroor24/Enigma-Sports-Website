@@ -24,887 +24,764 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <a href="mailto:info@enigmasports.com"><span>✉</span> info@enigmasports.com</a>
-  <span>|</span>
-  <a href="https://wa.me/923001234567"><span style="color:#25D366;">●</span> WhatsApp: +92 300 123 4567</a>
-  <span>|</span>
-  <span>✦ Manufacturing Since 2010</span>
+<!-- PRELOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <span class="loader-word"><span>ENIGMA</span></span>
+    <span class="loader-word loader-word--red"><span>SPORTS<sup>®</sup></span></span>
+  </div>
 </div>
 
+<!-- CUSTOM CURSOR (desktop only) -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
 <!-- NAV -->
-<nav id="main-nav">
+<header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#hero">
-      <div class="nav-diamond"><div class="nav-diamond-inner"></div></div>
-      <span class="nav-brand">ENIGMA SPORTS</span>
+    <a class="nav-logo" href="#hero" data-hover>
+      <svg class="nav-logo-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2 L22 12 L12 22 L2 12 Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 7 L17 12 L12 17 L7 12 Z" fill="currentColor"/>
+      </svg>
+      <span>ENIGMA<em>SPORTS</em></span>
     </a>
-    <div class="nav-links">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#products">Products</a>
-      <a class="nav-link" href="#process">Process</a>
-      <a class="nav-link" href="#capabilities">Capabilities</a>
-      <a class="nav-link" href="#contact">Contact</a>
-    </div>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="#about" data-hover>About</a>
+      <a class="nav-link" href="#products" data-hover>Products</a>
+      <a class="nav-link" href="#process" data-hover>Process</a>
+      <a class="nav-link" href="#capabilities" data-hover>Capabilities</a>
+      <a class="nav-link" href="#contact" data-hover>Contact</a>
+    </nav>
     <div class="nav-actions">
-      <a class="nav-contact-link" href="https://wa.me/923001234567">💬 WhatsApp</a>
-      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+      <a class="btn btn--small btn--red" href="#contact" data-hover>
+        <span>Start a Project</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" data-hover>
+        <span></span><span></span>
+      </button>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#process">Process</a>
-    <a href="#capabilities">Capabilities</a>
-    <a href="#contact">Contact</a>
-    <a href="https://wa.me/923001234567" style="color:#25D366;border:none;padding-top:20px;">💬 WhatsApp Us</a>
-    <a href="mailto:info@enigmasports.com" style="color:var(--accent);">✉ Email Us</a>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <nav class="menu-links" aria-label="Mobile">
+    <a href="#about"><i>01</i>About</a>
+    <a href="#products"><i>02</i>Products</a>
+    <a href="#process"><i>03</i>Process</a>
+    <a href="#capabilities"><i>04</i>Capabilities</a>
+    <a href="#contact"><i>05</i>Contact</a>
+  </nav>
+  <div class="menu-meta">
+    <a href="mailto:info@enigmasports.com">info@enigmasports.com</a>
+    <a href="https://wa.me/923001234567">WhatsApp +92 300 123 4567</a>
   </div>
-</nav>
+</div>
+
+<main>
 
 <!-- HERO -->
 <section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="hero-watermark">ENIGMA</span>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+
   <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        Custom Sportswear Manufacturer
-      </div>
-      <h1 class="hero-h1">GEAR BUILT<br>FOR <span class="highlight">MEGA CHAMPIONS</span></h1>
-      <p class="hero-body">Premium custom sportswear engineered for performance. From American football to soccer, tracksuits to bags — we craft performance gear for clubs, brands, and distributors worldwide.</p>
-      <div class="hero-cta-row">
-        <button class="btn-red" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">✉ Request a Quote</button>
-        <a class="btn-outline" href="https://wa.me/923001234567">💬 WhatsApp Us</a>
-      </div>
-      <div class="hero-note">
-        <div>
-          <div class="hero-stat-val">15+</div>
-          <div class="hero-stat-label">Years Manufacturing</div>
-        </div>
-        <div>
-          <div class="hero-stat-val">40+</div>
-          <div class="hero-stat-label">Countries Exported</div>
-        </div>
-        <div>
-          <div class="hero-stat-val">100%</div>
-          <div class="hero-stat-label">In-House Production</div>
-        </div>
+    <p class="hero-eyebrow reveal-line"><span><b></b>Custom Sportswear Manufacturer — Est. 2010</span></p>
+
+    <h1 class="hero-title">
+      <span class="reveal-line"><span>GEAR BUILT FOR</span></span>
+      <span class="reveal-line"><span><span class="stroke stroke--volt">MEGA</span> CHAMPIONS<i class="hero-dot">.</i></span></span>
+    </h1>
+
+    <div class="hero-row">
+      <p class="hero-copy reveal-line"><span>Premium custom sportswear engineered for performance. From American football to soccer, tracksuits to bags — crafted for clubs, brands, and distributors worldwide.</span></p>
+
+      <div class="hero-ctas reveal-line">
+        <span>
+          <a class="btn btn--red" href="#contact" data-hover>
+            <span>Request a Quote</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="https://wa.me/923001234567" data-hover>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>WhatsApp Us</span>
+          </a>
+        </span>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-img-main">
-        <div class="img-placeholder">
-          <div class="img-placeholder-icon">🏈</div>
-          <div class="img-placeholder-text">Hero Product Shot</div>
+
+    <div class="hero-stats reveal-line">
+      <span>
+        <div class="hero-stat">
+          <strong><span data-count="15">0</span><i>+</i></strong>
+          <small>Years Manufacturing</small>
         </div>
-      </div>
-      <div class="hero-img-sub">
-        <div class="hero-img-sm">
-          <div class="img-placeholder">
-            <div class="img-placeholder-icon">⚽</div>
-            <div class="img-placeholder-text">Soccer</div>
-          </div>
+        <div class="hero-stat">
+          <strong><span data-count="40">0</span><i>+</i></strong>
+          <small>Countries Exported</small>
         </div>
-        <div class="hero-img-sm">
-          <div class="img-placeholder">
-            <div class="img-placeholder-icon">🏀</div>
-            <div class="img-placeholder-text">Basketball</div>
-          </div>
+        <div class="hero-stat">
+          <strong><span data-count="100">0</span><i>%</i></strong>
+          <small>In-House Production</small>
         </div>
-      </div>
+        <a class="hero-badge" href="#about" aria-label="Scroll to about section" data-hover>
+          <svg class="hero-badge-spin" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="badge-circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#badge-circle">CUSTOM SPORTSWEAR • SINCE 2010 • SIALKOT • WORLDWIDE •</textPath></text>
+          </svg>
+          <svg class="hero-badge-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </span>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item">
-      <div class="trust-icon">🏭</div>
-      <div>
-        <div class="trust-text-label">100% In-House</div>
-        <div class="trust-text-sub">Fabric to finished product</div>
-      </div>
+<!-- MARQUEE -->
+<div class="marquee marquee--border" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span>American Football</span><i>✦</i><span class="outline">Soccer</span><i>✦</i><span>Basketball</span><i>✦</i><span class="outline">Baseball</span><i>✦</i><span>Tracksuits</span><i>✦</i><span class="outline">Sports Bags</span><i>✦</i>
     </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <div class="trust-icon">🎨</div>
-      <div>
-        <div class="trust-text-label">Free Mockups</div>
-        <div class="trust-text-sub">Before any commitment</div>
-      </div>
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <div class="trust-icon">📦</div>
-      <div>
-        <div class="trust-text-label">Low MOQ</div>
-        <div class="trust-text-sub">Sample orders welcome</div>
-      </div>
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <div class="trust-icon">🌍</div>
-      <div>
-        <div class="trust-text-label">Global Shipping</div>
-        <div class="trust-text-sub">Fast, reliable worldwide</div>
-      </div>
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <div class="trust-icon">✅</div>
-      <div>
-        <div class="trust-text-label">Quality Guaranteed</div>
-        <div class="trust-text-sub">International standards</div>
-      </div>
+    <div class="marquee-group">
+      <span>American Football</span><i>✦</i><span class="outline">Soccer</span><i>✦</i><span>Basketball</span><i>✦</i><span class="outline">Baseball</span><i>✦</i><span>Tracksuits</span><i>✦</i><span class="outline">Sports Bags</span><i>✦</i>
     </div>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section class="section" id="about">
+<section class="section about" id="about">
   <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag"><b>01</b> About Enigma</p>
+      <h2 class="section-title">
+        CRAFTED WITH <span class="stroke stroke--red">PRECISION.</span><br />
+        BUILT FOR <span class="stroke">THE WORLD.</span>
+      </h2>
+    </div>
+
     <div class="about-grid">
-      <div class="about-visual">
-        <div class="about-img-main">
-          <div class="img-placeholder">
-            <div class="img-placeholder-icon">🏭</div>
-            <div class="img-placeholder-text">Factory / Team Photo</div>
-          </div>
-        </div>
+      <div class="about-visual reveal">
+        <figure class="img-frame about-img-main">
+          <img src="assets/img/about-main.svg" alt="Enigma Sports production facility" loading="lazy" />
+        </figure>
         <div class="about-img-row">
-          <div class="about-img-sm">
-            <div class="img-placeholder">
-              <div class="img-placeholder-icon">🧵</div>
-              <div class="img-placeholder-text">Production</div>
-            </div>
-          </div>
-          <div class="about-img-sm">
-            <div class="img-placeholder">
-              <div class="img-placeholder-icon">📐</div>
-              <div class="img-placeholder-text">Design</div>
-            </div>
-          </div>
+          <figure class="img-frame">
+            <img src="assets/img/about-detail-1.svg" alt="Stitching and embroidery detail" loading="lazy" />
+          </figure>
+          <figure class="img-frame">
+            <img src="assets/img/about-detail-2.svg" alt="In-house design studio" loading="lazy" />
+          </figure>
         </div>
       </div>
+
       <div class="about-content">
-        <div class="section-tag"><div class="accent-bar"></div> About Enigma Sports</div>
-        <h2 class="section-h">CRAFTED WITH PRECISION.<br>BUILT FOR THE WORLD.</h2>
-        <p class="section-sub">Enigma Sports is a premium custom sportswear manufacturer with over a decade of expertise delivering performance-grade gear to clubs, brands, and distributors across the globe. We combine world-class craftsmanship with modern manufacturing technology to bring your vision to life.</p>
-        <div class="about-badges" style="margin-top:24px;">
-          <span class="badge accent">Since 2010</span>
-          <span class="badge">B2B Manufacturer</span>
-          <span class="badge">Private Label</span>
-          <span class="badge">Custom Branding</span>
-          <span class="badge">Sample Orders</span>
+      <div class="about-lead reveal">
+        <p>Enigma Sports is a premium custom sportswear manufacturer with over a decade of expertise delivering performance-grade gear to clubs, brands, and distributors across the globe. We combine world-class craftsmanship with modern manufacturing technology to bring your vision to life.</p>
+        <div class="about-badges">
+          <span class="chip chip--red">Since 2010</span>
+          <span class="chip">B2B Manufacturer</span>
+          <span class="chip">Private Label</span>
+          <span class="chip">Custom Branding</span>
+          <span class="chip">Sample Orders</span>
         </div>
-        <div class="about-points">
-          <div class="about-point">
-            <div class="about-point-num">01</div>
-            <div>
-              <div class="about-point-title">Full In-House Control</div>
-              <div class="about-point-desc">From fabric sourcing and cutting to stitching, printing, and packaging — every step happens under our roof. No middlemen, no quality surprises.</div>
-            </div>
+      </div>
+
+      <ol class="about-points">
+        <li class="about-point reveal" data-hover>
+          <span class="about-num">01</span>
+          <div>
+            <h3>Full In-House Control</h3>
+            <p>From fabric sourcing and cutting to stitching, printing, and packaging — every step happens under our roof. No middlemen, no quality surprises.</p>
           </div>
-          <div class="about-point">
-            <div class="about-point-num">02</div>
-            <div>
-              <div class="about-point-title">Custom for Every Client</div>
-              <div class="about-point-desc">Your logo, your colors, your specifications. We produce exactly what you need — from a single sample run to thousands of units.</div>
-            </div>
+        </li>
+        <li class="about-point reveal" data-hover>
+          <span class="about-num">02</span>
+          <div>
+            <h3>Custom for Every Client</h3>
+            <p>Your logo, your colors, your specifications. We produce exactly what you need — from a single sample run to thousands of units.</p>
           </div>
-          <div class="about-point">
-            <div class="about-point-num">03</div>
-            <div>
-              <div class="about-point-title">Trusted by Global Brands</div>
-              <div class="about-point-desc">We supply to sports brands, retail distributors, universities, and professional clubs across North America, Europe, and beyond.</div>
-            </div>
+        </li>
+        <li class="about-point reveal" data-hover>
+          <span class="about-num">03</span>
+          <div>
+            <h3>Trusted by Global Brands</h3>
+            <p>We supply sports brands, retail distributors, universities, and professional clubs across North America, Europe, and beyond.</p>
           </div>
-        </div>
+        </li>
+      </ol>
+      </div>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="trust-strip reveal">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V8l6 4V8l6 4V4h6v17H3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <div><strong>100% In-House</strong><small>Fabric to finished product</small></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19l7-7a4.95 4.95 0 1 0-7-7l-7 7a4.95 4.95 0 1 0 7 7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 8.5l6 6" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div><strong>Free Mockups</strong><small>Before any commitment</small></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 8l9 5 9-5M12 13v8" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <div><strong>Low MOQ</strong><small>Sample orders welcome</small></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3z" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div><strong>Global Shipping</strong><small>Fast, reliable worldwide</small></div>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Quality Guaranteed</strong><small>International standards</small></div>
       </div>
     </div>
   </div>
 </section>
-
-<hr class="divider" />
 
 <!-- PRODUCTS -->
-<section class="section" id="products">
+<section class="section products" id="products">
   <div class="container">
-    <div class="products-header">
+    <div class="section-head section-head--split reveal">
       <div>
-        <div class="section-tag"><div class="accent-bar"></div> Product Range</div>
-        <h2 class="section-h">OUR PRODUCT<br>LINE-UP</h2>
+        <p class="section-tag"><b>02</b> Product Range</p>
+        <h2 class="section-title">THE FULL<br><span class="stroke stroke--red">LINE-UP.</span></h2>
       </div>
-      <p style="max-width:320px;font-size:15px;color:var(--text-secondary);line-height:1.75;">All products are fully customisable. No prices listed — contact us directly for samples and bulk quotations.</p>
+      <p class="section-note">All products are fully customisable and made to order. No prices listed — contact us for samples and bulk quotations.</p>
     </div>
 
-    <div class="products-grid">
+    <div class="product-list">
 
-      <!-- American Football — Featured -->
-      <div class="product-card featured">
-        <div class="product-img">
-          <div class="product-img-bg"><div class="product-sport-icon">🏈</div></div>
-          <div class="product-tag">Most Popular</div>
-          <div class="img-placeholder" style="position:relative;z-index:1;">
-            <div class="img-placeholder-icon" style="font-size:48px;opacity:0.4;">🏈</div>
-            <div class="img-placeholder-text">American Football Uniform — Product Image</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-category">Team Uniforms</div>
-          <div class="product-name">AMERICAN FOOTBALL UNIFORMS</div>
-          <div class="product-desc">Full custom American football uniform sets engineered for elite performance. Padded jerseys, pants, and full uniform packages available for teams at every level — high school to professional.</div>
-          <div class="product-features">
-            <span class="product-feat">Sublimation Printing</span>
-            <span class="product-feat">Moisture-Wicking</span>
-            <span class="product-feat">Reinforced Stitching</span>
-            <span class="product-feat">Custom Numbering</span>
-            <span class="product-feat">Full Team Packages</span>
-          </div>
-          <div class="product-enquire">Enquire for pricing & samples <span class="arr">→</span></div>
-        </div>
-      </div>
+      <a class="product-row reveal" href="#contact" data-flair="football">
+        <span class="product-flair" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="6.5" transform="rotate(-35 12 12)" stroke="currentColor" stroke-width="1.7"/><path d="M9 15l6-6M9.8 11.4l1.4 1.4M11.4 9.8l1.4 1.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <span class="product-index">01</span>
+        <span class="product-thumb"><img src="assets/img/product-football.svg" alt="American football uniform mockup" loading="lazy" /></span>
+        <span class="product-name">American Football<small>Padded jerseys, pants &amp; full team packages — high school to pro.</small></span>
+        <span class="product-tags"><span>Sublimation</span><span>Reinforced Stitching</span><span>Custom Numbering</span></span>
+        <span class="product-cta"><b>Most Popular</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
-      <!-- Baseball -->
-      <div class="product-card">
-        <div class="product-img">
-          <div class="product-img-bg"><div class="product-sport-icon">⚾</div></div>
-          <div class="img-placeholder" style="position:relative;z-index:1;">
-            <div class="img-placeholder-icon" style="font-size:40px;opacity:0.4;">⚾</div>
-            <div class="img-placeholder-text">Baseball Uniform — Product Image</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-category">Team Uniforms</div>
-          <div class="product-name">BASEBALL UNIFORMS</div>
-          <div class="product-desc">Classic and modern cuts for baseball and softball. Jerseys, pants, and full sets with your team's custom design, name, and number.</div>
-          <div class="product-features">
-            <span class="product-feat">Custom Logos</span>
-            <span class="product-feat">Pinstripe Options</span>
-            <span class="product-feat">Embroidery Available</span>
-            <span class="product-feat">Pro Fabrics</span>
-          </div>
-          <div class="product-enquire">Enquire for pricing <span class="arr">→</span></div>
-        </div>
-      </div>
+      <a class="product-row reveal" href="#contact" data-flair="soccer">
+        <span class="product-flair" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5l3.5 2.5-1.3 4h-4.4l-1.3-4L12 7.5zM12 3v4.5M19.5 8.5L15.5 10M17.8 18l-3.6-2M6.2 18l3.6-2M4.5 8.5L8.5 10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="product-index">02</span>
+        <span class="product-thumb"><img src="assets/img/product-soccer.svg" alt="Custom soccer kit mockup" loading="lazy" /></span>
+        <span class="product-name">Soccer Kits<small>Home / away sets, GK kits &amp; training wear for clubs and academies.</small></span>
+        <span class="product-tags"><span>Home &amp; Away</span><span>Sponsor Branding</span><span>Anti-Odor Fabric</span></span>
+        <span class="product-cta">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
-      <!-- Basketball -->
-      <div class="product-card">
-        <div class="product-img">
-          <div class="product-img-bg"><div class="product-sport-icon">🏀</div></div>
-          <div class="img-placeholder" style="position:relative;z-index:1;">
-            <div class="img-placeholder-icon" style="font-size:40px;opacity:0.4;">🏀</div>
-            <div class="img-placeholder-text">Basketball Uniform — Product Image</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-category">Team Uniforms</div>
-          <div class="product-name">BASKETBALL UNIFORMS</div>
-          <div class="product-desc">Lightweight, breathable basketball jerseys and shorts. Full reversible options and custom sublimated designs for club and professional teams.</div>
-          <div class="product-features">
-            <span class="product-feat">Reversible Options</span>
-            <span class="product-feat">Mesh Fabric</span>
-            <span class="product-feat">Custom Sublimation</span>
-            <span class="product-feat">Youth & Adult</span>
-          </div>
-          <div class="product-enquire">Enquire for pricing <span class="arr">→</span></div>
-        </div>
-      </div>
+      <a class="product-row reveal" href="#contact" data-flair="basketball">
+        <span class="product-flair" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3v18M5.5 5.5C8 8 8 16 5.5 18.5M18.5 5.5C16 8 16 16 18.5 18.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        </span>
+        <span class="product-index">03</span>
+        <span class="product-thumb"><img src="assets/img/product-basketball.svg" alt="Basketball uniform mockup" loading="lazy" /></span>
+        <span class="product-name">Basketball Uniforms<small>Lightweight, breathable jerseys &amp; shorts. Reversible options available.</small></span>
+        <span class="product-tags"><span>Reversible</span><span>Mesh Fabric</span><span>Youth &amp; Adult</span></span>
+        <span class="product-cta">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
-      <!-- Soccer -->
-      <div class="product-card featured">
-        <div class="product-img">
-          <div class="product-img-bg"><div class="product-sport-icon">⚽</div></div>
-          <div class="img-placeholder" style="position:relative;z-index:1;">
-            <div class="img-placeholder-icon" style="font-size:48px;opacity:0.4;">⚽</div>
-            <div class="img-placeholder-text">Soccer Kit — Product Image</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-category">Team Uniforms</div>
-          <div class="product-name">SOCCER KITS</div>
-          <div class="product-desc">Full custom soccer kits for clubs, academies, and national federations. Home/away sets, goalkeeper kits, and training wear — all under one production roof with precision craftsmanship.</div>
-          <div class="product-features">
-            <span class="product-feat">Home & Away Sets</span>
-            <span class="product-feat">GK Kits Available</span>
-            <span class="product-feat">Training Kits</span>
-            <span class="product-feat">Sponsor Branding</span>
-            <span class="product-feat">Anti-Odor Fabric</span>
-          </div>
-          <div class="product-enquire">Enquire for pricing & samples <span class="arr">→</span></div>
-        </div>
-      </div>
+      <a class="product-row reveal" href="#contact" data-flair="baseball">
+        <span class="product-flair" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M6 4.5c2 2.2 2 12.8 0 15M18 4.5c-2 2.2-2 12.8 0 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5.2 8l1.6.8M5.2 12h1.7M5.2 16l1.6-.8M18.8 8l-1.6.8M18.8 12h-1.7M18.8 16l-1.6-.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </span>
+        <span class="product-index">04</span>
+        <span class="product-thumb"><img src="assets/img/product-baseball.svg" alt="Baseball uniform mockup" loading="lazy" /></span>
+        <span class="product-name">Baseball Uniforms<small>Classic &amp; modern cuts with custom names, numbers and pinstripes.</small></span>
+        <span class="product-tags"><span>Pinstripes</span><span>Embroidery</span><span>Pro Fabrics</span></span>
+        <span class="product-cta">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
-      <!-- Tracksuits -->
-      <div class="product-card">
-        <div class="product-img">
-          <div class="product-img-bg"><div class="product-sport-icon">🏃</div></div>
-          <div class="img-placeholder" style="position:relative;z-index:1;">
-            <div class="img-placeholder-icon" style="font-size:40px;opacity:0.4;">🏃</div>
-            <div class="img-placeholder-text">Tracksuit — Product Image</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-category">Training & Lifestyle</div>
-          <div class="product-name">TRACKSUITS</div>
-          <div class="product-desc">Custom tracksuits for teams, sports brands, and corporate clients. Full jacket and trouser sets in polyester, fleece, and technical fabrics with your branding.</div>
-          <div class="product-features">
-            <span class="product-feat">Polyester & Fleece</span>
-            <span class="product-feat">Screen Print</span>
-            <span class="product-feat">Embroidery</span>
-            <span class="product-feat">Zipper Styles</span>
-          </div>
-          <div class="product-enquire">Enquire for pricing <span class="arr">→</span></div>
-        </div>
-      </div>
+      <a class="product-row reveal" href="#contact" data-flair="tracksuit">
+        <span class="product-flair" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 4l-5 3 2 3.5L8 9v11h8V9l3 1.5L21 7l-5-3-1.5 2h-5L8 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9v11" stroke="currentColor" stroke-width="1.3" stroke-dasharray="2.5 2.5"/></svg>
+        </span>
+        <span class="product-index">05</span>
+        <span class="product-thumb"><img src="assets/img/product-tracksuit.svg" alt="Custom tracksuit mockup" loading="lazy" /></span>
+        <span class="product-name">Tracksuits<small>Jacket &amp; trouser sets in polyester, fleece and technical fabrics.</small></span>
+        <span class="product-tags"><span>Polyester &amp; Fleece</span><span>Screen Print</span><span>Zipper Styles</span></span>
+        <span class="product-cta">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
-      <!-- Bags -->
-      <div class="product-card">
-        <div class="product-img">
-          <div class="product-img-bg"><div class="product-sport-icon">🎒</div></div>
-          <div class="img-placeholder" style="position:relative;z-index:1;">
-            <div class="img-placeholder-icon" style="font-size:40px;opacity:0.4;">🎒</div>
-            <div class="img-placeholder-text">Sports Bag — Product Image</div>
-          </div>
-        </div>
-        <div class="product-body">
-          <div class="product-category">Accessories</div>
-          <div class="product-name">SPORTS BAGS</div>
-          <div class="product-desc">Team kit bags, backpacks, and duffle bags custom branded for clubs and distributors. Durable construction with multiple compartment options and custom logo printing.</div>
-          <div class="product-features">
-            <span class="product-feat">Team Kit Bags</span>
-            <span class="product-feat">Backpacks</span>
-            <span class="product-feat">Duffel Bags</span>
-            <span class="product-feat">Custom Branding</span>
-          </div>
-          <div class="product-enquire">Enquire for pricing <span class="arr">→</span></div>
-        </div>
-      </div>
+      <a class="product-row reveal" href="#contact" data-flair="bag">
+        <span class="product-flair" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="10" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 9V7a4 4 0 0 1 8 0v2M8 13v3M16 13v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <span class="product-index">06</span>
+        <span class="product-thumb"><img src="assets/img/product-bag.svg" alt="Branded sports bag mockup" loading="lazy" /></span>
+        <span class="product-name">Sports Bags<small>Kit bags, backpacks &amp; duffels — durable and fully branded.</small></span>
+        <span class="product-tags"><span>Kit Bags</span><span>Backpacks</span><span>Duffels</span></span>
+        <span class="product-cta">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
 
     </div>
 
-    <!-- Note -->
-    <div style="margin-top:24px;padding:20px 28px;background:var(--accent-subtle);border-left:2px solid var(--accent);">
-      <p style="font-size:14px;color:var(--text-secondary);line-height:1.7;"><strong style="color:var(--text-primary);">No prices on the website.</strong> All products are made-to-order with full customisation. Contact us via email or WhatsApp to discuss your requirements, request samples, and receive a detailed quotation.</p>
-    </div>
+    <p class="products-note reveal"><strong>No prices on the website.</strong> Everything is made to order with full customisation — reach out for samples and a detailed quotation.</p>
   </div>
 </section>
 
-<hr class="divider" />
-
 <!-- PROCESS -->
-<section class="section process-section" id="process">
+<section class="section process" id="process">
   <div class="container">
-    <div style="text-align:center;max-width:600px;margin:0 auto;">
-      <div class="section-tag" style="justify-content:center;"><div class="accent-bar"></div> How It Works</div>
-      <h2 class="section-h">FROM ENQUIRY<br>TO DELIVERY</h2>
-      <p class="section-sub" style="margin:0 auto;">A straightforward process designed to get your custom order right, on time, every time.</p>
+    <div class="section-head section-head--center reveal">
+      <p class="section-tag"><b>03</b> How It Works</p>
+      <h2 class="section-title">FROM ENQUIRY<br><span class="stroke">TO DELIVERY.</span></h2>
+      <p class="section-note">A straightforward process designed to get your custom order right, on time, every time.</p>
     </div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="process-num">01</div>
-        <div class="process-title">Reach Out</div>
-        <div class="process-desc">Contact us via WhatsApp or email with your product requirements, quantities, and any design ideas. We respond within 24 hours.</div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">02</div>
-        <div class="process-title">Free Mockup</div>
-        <div class="process-desc">Our in-house design team creates detailed mockups of your products — completely free. You approve the design before a single unit is made.</div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">03</div>
-        <div class="process-title">Sample & Confirm</div>
-        <div class="process-desc">We produce a physical sample for your approval. Review the quality, fit, and finish — then confirm your bulk order with confidence.</div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">04</div>
-        <div class="process-title">Production & Delivery</div>
-        <div class="process-desc">Your order enters full production in our facility. Strict quality checks at every stage. We ship globally with full tracking.</div>
-      </div>
-    </div>
+
+    <ol class="process-grid">
+      <li class="process-step reveal" data-hover>
+        <span class="process-ghost">01</span>
+        <h3>Reach Out</h3>
+        <p>Contact us via WhatsApp or email with your product requirements, quantities, and design ideas. We respond within 24 hours.</p>
+      </li>
+      <li class="process-step reveal" data-hover>
+        <span class="process-ghost">02</span>
+        <h3>Free Mockup</h3>
+        <p>Our in-house design team creates detailed mockups — completely free. You approve the design before a single unit is made.</p>
+      </li>
+      <li class="process-step reveal" data-hover>
+        <span class="process-ghost">03</span>
+        <h3>Sample &amp; Confirm</h3>
+        <p>We produce a physical sample for your approval. Review the quality, fit, and finish — then confirm your bulk order with confidence.</p>
+      </li>
+      <li class="process-step reveal" data-hover>
+        <span class="process-ghost">04</span>
+        <h3>Production &amp; Delivery</h3>
+        <p>Your order enters full production with strict quality checks at every stage. We ship globally with full tracking.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- WHY ENIGMA -->
-<section class="section" id="why">
+<section class="section why" id="why">
   <div class="container">
-    <div class="section-tag"><div class="accent-bar"></div> Why Choose Us</div>
-    <h2 class="section-h">THE ENIGMA<br>DIFFERENCE</h2>
+    <div class="section-head reveal">
+      <p class="section-tag"><b>04</b> Why Choose Us</p>
+      <h2 class="section-title">THE ENIGMA<br><span class="stroke stroke--red">DIFFERENCE.</span></h2>
+    </div>
+
     <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🏭</div>
-        <div class="why-title">Fully In-House Manufacturing</div>
-        <div class="why-desc">Every process — from knitting and cutting to printing, embroidery, and packaging — happens under one roof. This means tighter quality control, faster turnarounds, and competitive pricing.</div>
+      <div class="why-card reveal" data-hover>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V8l6 4V8l6 4V4h6v17H3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <h3>Fully In-House Manufacturing</h3>
+        <p>Knitting, cutting, printing, embroidery, packaging — all under one roof. Tighter quality control, faster turnarounds, competitive pricing.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🎨</div>
-        <div class="why-title">Unlimited Customisation</div>
-        <div class="why-desc">Your brand, your colors, your vision. We handle sublimation printing, screen printing, embroidery, PVC logos, custom labels and tags, and more — on every product we make.</div>
+      <div class="why-card reveal" data-hover>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19l7-7a4.95 4.95 0 1 0-7-7l-7 7a4.95 4.95 0 1 0 7 7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 8.5l6 6" stroke="currentColor" stroke-width="1.7"/></svg>
+        <h3>Unlimited Customisation</h3>
+        <p>Sublimation, screen printing, embroidery, PVC logos, custom labels and tags — your brand, your colors, your vision on every product.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">⚡</div>
-        <div class="why-title">Fast Turnaround Times</div>
-        <div class="why-desc">Samples typically delivered within 7–10 business days. Bulk orders processed with priority scheduling. We understand deadlines — and we meet them.</div>
+      <div class="why-card reveal" data-hover>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <h3>Fast Turnaround Times</h3>
+        <p>Samples in 7–10 business days. Bulk orders with priority scheduling. We understand deadlines — and we meet them.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🌍</div>
-        <div class="why-title">Trusted Globally</div>
-        <div class="why-desc">We've exported to over 40 countries across North America, Europe, Australia, and the Middle East. From small clubs to large distributors — we scale with you.</div>
+      <div class="why-card reveal" data-hover>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3z" stroke="currentColor" stroke-width="1.7"/></svg>
+        <h3>Trusted Globally</h3>
+        <p>Exported to 40+ countries across North America, Europe, Australia, and the Middle East. From small clubs to large distributors.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">📋</div>
-        <div class="why-title">Low Minimum Order Quantities</div>
-        <div class="why-desc">Starting a new line or testing a design? We welcome small orders and samples. No need to commit to thousands of units before you've seen the product.</div>
+      <div class="why-card reveal" data-hover>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 8l9 5 9-5M12 13v8" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <h3>Low Minimum Orders</h3>
+        <p>Starting a new line or testing a design? We welcome small orders and samples. No need to commit to thousands of units.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">💬</div>
-        <div class="why-title">Direct Communication</div>
-        <div class="why-desc">No automated systems, no call centres. You deal directly with our team via WhatsApp or email — quick answers, real updates, and a relationship built on transparency.</div>
+      <div class="why-card reveal" data-hover>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <h3>Direct Communication</h3>
+        <p>No automated systems, no call centres. Deal directly with our team via WhatsApp or email — quick answers, real updates.</p>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="divider" />
-
 <!-- CAPABILITIES -->
-<section class="section caps-section" id="capabilities">
+<section class="section caps" id="capabilities">
   <div class="container">
     <div class="caps-grid">
-      <div>
-        <div class="section-tag"><div class="accent-bar"></div> Production Capabilities</div>
-        <h2 class="section-h">EVERYTHING<br>IN-HOUSE</h2>
-        <p class="section-sub">Our facility is equipped with state-of-the-art machinery covering every stage of sportswear production.</p>
-        <div class="caps-list">
-          <div class="caps-item">
-            <div class="caps-item-icon">🖨️</div>
-            <div>
-              <div class="caps-item-title">Sublimation Printing</div>
-              <div class="caps-item-desc">Full-colour, all-over prints that won't crack or fade</div>
-            </div>
+      <div class="caps-info">
+        <div class="section-head reveal">
+          <p class="section-tag"><b>05</b> Production Capabilities</p>
+          <h2 class="section-title">EVERYTHING<br><span class="stroke">IN-HOUSE.</span></h2>
+          <p class="section-note">Our facility is equipped with state-of-the-art machinery covering every stage of sportswear production.</p>
+        </div>
+
+        <div class="caps-stats reveal">
+          <div class="caps-stat">
+            <strong><span data-count="500">0</span>+</strong>
+            <small>Units / day capacity</small>
           </div>
-          <div class="caps-item">
-            <div class="caps-item-icon">🖥️</div>
-            <div>
-              <div class="caps-item-title">Screen Printing</div>
-              <div class="caps-item-desc">Spot colours, team names, numbers, and logos</div>
-            </div>
-          </div>
-          <div class="caps-item">
-            <div class="caps-item-icon">🪡</div>
-            <div>
-              <div class="caps-item-title">Computerised Embroidery</div>
-              <div class="caps-item-desc">Precise logo embroidery on any fabric or garment</div>
-            </div>
-          </div>
-          <div class="caps-item">
-            <div class="caps-item-icon">✂️</div>
-            <div>
-              <div class="caps-item-title">Cut & Sew Production</div>
-              <div class="caps-item-desc">Custom patterns, grading, and precision stitching</div>
-            </div>
-          </div>
-          <div class="caps-item">
-            <div class="caps-item-icon">🏷️</div>
-            <div>
-              <div class="caps-item-title">Private Label & Packaging</div>
-              <div class="caps-item-desc">Custom hang tags, woven labels, poly bags, and boxes</div>
-            </div>
-          </div>
-          <div class="caps-item">
-            <div class="caps-item-icon">🔬</div>
-            <div>
-              <div class="caps-item-title">Quality Control</div>
-              <div class="caps-item-desc">Multi-stage inspection before every shipment</div>
-            </div>
+          <div class="caps-stat">
+            <strong>7–10</strong>
+            <small>Days for samples</small>
           </div>
         </div>
+
+        <figure class="img-frame caps-visual reveal">
+          <img src="assets/img/capability-facility.svg" alt="Production floor at the Enigma Sports facility" loading="lazy" />
+        </figure>
       </div>
-      <div class="caps-visual">
-        <div class="caps-img-main">
-          <div class="img-placeholder">
-            <div class="img-placeholder-icon">🏭</div>
-            <div class="img-placeholder-text">Production Facility</div>
-          </div>
-        </div>
-        <div class="caps-img-row">
-          <div class="caps-img-sm"><div class="img-placeholder"><div class="img-placeholder-icon">🖨️</div><div class="img-placeholder-text">Printing</div></div></div>
-          <div class="caps-img-sm"><div class="img-placeholder"><div class="img-placeholder-icon">🪡</div><div class="img-placeholder-text">Embroidery</div></div></div>
-          <div class="caps-img-sm"><div class="img-placeholder"><div class="img-placeholder-icon">✂️</div><div class="img-placeholder-text">Cutting</div></div></div>
-        </div>
-        <div class="caps-badge-row">
-          <div class="caps-stat-box">
-            <div>
-              <div class="caps-stat-val">500+</div>
-              <div class="caps-stat-label">Units / Day Capacity</div>
-            </div>
-          </div>
-          <div class="caps-stat-box">
-            <div>
-              <div class="caps-stat-val">7–10</div>
-              <div class="caps-stat-label">Days for Samples</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <ul class="caps-list">
+        <li class="caps-item reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9V3h12v6M6 14H4a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><rect x="6" y="14" width="12" height="7" stroke="currentColor" stroke-width="1.7"/></svg>
+          <div><h3>Sublimation Printing</h3><p>Full-colour, all-over prints that won't crack or fade</p></div>
+        </li>
+        <li class="caps-item reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <div><h3>Screen Printing</h3><p>Spot colours, team names, numbers, and logos</p></div>
+        </li>
+        <li class="caps-item reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20c8 0 8-16 16-16M4 4c8 0 8 16 16 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <div><h3>Computerised Embroidery</h3><p>Precise logo embroidery on any fabric or garment</p></div>
+        </li>
+        <li class="caps-item reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.7"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 7.8L20 16M8.5 16.2L20 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <div><h3>Cut &amp; Sew Production</h3><p>Custom patterns, grading, and precision stitching</p></div>
+        </li>
+        <li class="caps-item reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12l-8 8-9-9V4h7l10 8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor"/></svg>
+          <div><h3>Private Label &amp; Packaging</h3><p>Custom hang tags, woven labels, poly bags, and boxes</p></div>
+        </li>
+        <li class="caps-item reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M16 16l5 5M8.5 11l2 2 3.5-3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><h3>Quality Control</h3><p>Multi-stage inspection before every shipment</p></div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- CUSTOMISATION -->
-<section class="section" id="customisation">
+<section class="section custom" id="customisation">
   <div class="container">
-    <div style="text-align:center;max-width:600px;margin:0 auto 0;">
-      <div class="section-tag" style="justify-content:center;"><div class="accent-bar"></div> Customisation</div>
-      <h2 class="section-h">YOUR BRAND,<br>YOUR RULES</h2>
-      <p class="section-sub" style="margin:0 auto;">We handle every element of your custom order — from design to label.</p>
+    <div class="section-head section-head--center reveal">
+      <p class="section-tag"><b>06</b> Customisation</p>
+      <h2 class="section-title">YOUR BRAND,<br><span class="stroke stroke--volt">YOUR RULES.</span></h2>
+      <p class="section-note">We handle every element of your custom order — from design to label.</p>
     </div>
+
     <div class="custom-grid">
-      <div class="custom-card">
-        <div class="custom-step-num">Decoration</div>
-        <div class="custom-title">Printing & Embroidery</div>
-        <div class="custom-desc">Every decoration technique available in-house. We match Pantone colours precisely and produce artwork digitisation at no extra charge.</div>
-        <div class="custom-options">
-          <span class="custom-opt">Sublimation</span>
-          <span class="custom-opt">Screen Print</span>
-          <span class="custom-opt">Embroidery</span>
-          <span class="custom-opt">Rhinestone</span>
-          <span class="custom-opt">Vinyl / Foil</span>
-          <span class="custom-opt">Reflective</span>
+      <div class="custom-card reveal" data-hover>
+        <p class="custom-kicker">Decoration</p>
+        <h3>Printing &amp; Embroidery</h3>
+        <p>Every decoration technique available in-house. We match Pantone colours precisely and digitise artwork at no extra charge.</p>
+        <div class="custom-opts">
+          <span>Sublimation</span><span>Screen Print</span><span>Embroidery</span><span>Rhinestone</span><span>Vinyl / Foil</span><span>Reflective</span>
         </div>
       </div>
-      <div class="custom-card">
-        <div class="custom-step-num">Materials</div>
-        <div class="custom-title">Fabrics & Construction</div>
-        <div class="custom-desc">Choose from our extensive fabric library or specify your own. We source performance polyester, mesh, fleece, spandex blends, and more.</div>
-        <div class="custom-options">
-          <span class="custom-opt">Performance Polyester</span>
-          <span class="custom-opt">Mesh</span>
-          <span class="custom-opt">Fleece</span>
-          <span class="custom-opt">Spandex Blends</span>
-          <span class="custom-opt">Moisture-Wicking</span>
+      <div class="custom-card reveal" data-hover>
+        <p class="custom-kicker">Materials</p>
+        <h3>Fabrics &amp; Construction</h3>
+        <p>Choose from our extensive fabric library or specify your own. Performance polyester, mesh, fleece, spandex blends, and more.</p>
+        <div class="custom-opts">
+          <span>Performance Polyester</span><span>Mesh</span><span>Fleece</span><span>Spandex Blends</span><span>Moisture-Wicking</span>
         </div>
       </div>
-      <div class="custom-card">
-        <div class="custom-step-num">Branding</div>
-        <div class="custom-title">Labels, Tags & Packaging</div>
-        <div class="custom-desc">Your product, completely branded. We produce custom woven labels, hang tags, printed poly bags, and branded boxes to give your product a premium feel.</div>
-        <div class="custom-options">
-          <span class="custom-opt">Woven Labels</span>
-          <span class="custom-opt">Hang Tags</span>
-          <span class="custom-opt">Poly Bags</span>
-          <span class="custom-opt">PVC Logos</span>
-          <span class="custom-opt">Branded Boxes</span>
+      <div class="custom-card reveal" data-hover>
+        <p class="custom-kicker">Branding</p>
+        <h3>Labels, Tags &amp; Packaging</h3>
+        <p>Your product, completely branded. Custom woven labels, hang tags, printed poly bags, and branded boxes for a premium feel.</p>
+        <div class="custom-opts">
+          <span>Woven Labels</span><span>Hang Tags</span><span>Poly Bags</span><span>PVC Logos</span><span>Branded Boxes</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<hr class="divider" />
-
-<!-- MARKETS SERVED -->
-<section class="section" style="background:var(--surface);">
-  <div class="container">
-    <div style="text-align:center;max-width:520px;margin:0 auto;">
-      <div class="section-tag" style="justify-content:center;"><div class="accent-bar"></div> Markets We Serve</div>
-      <h2 class="section-h">WHO WE<br>WORK WITH</h2>
+<!-- MARKETS MARQUEE -->
+<div class="marquee marquee--big" aria-hidden="true">
+  <div class="marquee-track marquee-track--reverse">
+    <div class="marquee-group">
+      <span class="outline">Sports Clubs</span><i>✦</i><span>Retailers</span><i>✦</i><span class="outline">Universities</span><i>✦</i><span>Sportswear Brands</span><i>✦</i><span class="outline">Gyms</span><i>✦</i><span>Academies</span><i>✦</i>
     </div>
-    <div class="markets-row">
-      <div class="market-card">
-        <div class="market-icon">🏟️</div>
-        <div class="market-name">Sports Clubs</div>
-        <div class="market-sub">Amateur to professional</div>
-      </div>
-      <div class="market-card">
-        <div class="market-icon">🏪</div>
-        <div class="market-name">Retailers & Distributors</div>
-        <div class="market-sub">Wholesale supply</div>
-      </div>
-      <div class="market-card">
-        <div class="market-icon">🎓</div>
-        <div class="market-name">Schools & Universities</div>
-        <div class="market-sub">Team kits & PE wear</div>
-      </div>
-      <div class="market-card">
-        <div class="market-icon">👕</div>
-        <div class="market-name">Sportswear Brands</div>
-        <div class="market-sub">Private label OEM</div>
-      </div>
-      <div class="market-card">
-        <div class="market-icon">🏋️</div>
-        <div class="market-name">Gyms & Academies</div>
-        <div class="market-sub">Training & fitness gear</div>
-      </div>
+    <div class="marquee-group">
+      <span class="outline">Sports Clubs</span><i>✦</i><span>Retailers</span><i>✦</i><span class="outline">Universities</span><i>✦</i><span>Sportswear Brands</span><i>✦</i><span class="outline">Gyms</span><i>✦</i><span>Academies</span><i>✦</i>
     </div>
   </div>
-</section>
+</div>
 
 <!-- TESTIMONIALS -->
-<section class="section testimonials-section">
+<section class="section quotes" id="testimonials">
   <div class="container">
-    <div style="text-align:center;max-width:520px;margin:0 auto;">
-      <div class="section-tag" style="justify-content:center;"><div class="accent-bar"></div> Client Feedback</div>
-      <h2 class="section-h">WHAT OUR<br>CLIENTS SAY</h2>
+    <div class="section-head reveal">
+      <p class="section-tag"><b>07</b> Client Feedback</p>
+      <h2 class="section-title">WORD ON<br><span class="stroke">THE FIELD.</span></h2>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Enigma delivered exactly what we asked for — on time and within budget. The sublimation quality on our football jerseys was exceptional. We've reordered three times."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">🏈</div>
-          <div>
-            <div class="testimonial-name">Marcus T.</div>
-            <div class="testimonial-role">Team Manager — USA</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"We sourced our entire soccer kit range from Enigma Sports. The communication was seamless, free mockups were provided quickly, and the samples arrived faster than expected."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">⚽</div>
-          <div>
-            <div class="testimonial-name">Sophie R.</div>
-            <div class="testimonial-role">Brand Director — UK</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"As a first-time international buyer, I was nervous. But Enigma's process was professional every step of the way. The tracksuits are outstanding quality."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">🏃</div>
-          <div>
-            <div class="testimonial-name">Luca M.</div>
-            <div class="testimonial-role">Sports Retailer — Italy</div>
-          </div>
-        </div>
-      </div>
+
+    <div class="quotes-grid">
+      <figure class="quote-card reveal" data-hover>
+        <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Enigma delivered exactly what we asked for — on time and within budget. The sublimation quality on our football jerseys was exceptional. We've reordered three times."</blockquote>
+        <figcaption><strong>Marcus T.</strong><span>Team Manager — USA</span></figcaption>
+      </figure>
+      <figure class="quote-card reveal" data-hover>
+        <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"We sourced our entire soccer kit range from Enigma Sports. Communication was seamless, free mockups came quickly, and samples arrived faster than expected."</blockquote>
+        <figcaption><strong>Sophie R.</strong><span>Brand Director — UK</span></figcaption>
+      </figure>
+      <figure class="quote-card reveal" data-hover>
+        <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"As a first-time international buyer, I was nervous. But Enigma's process was professional every step of the way. The tracksuits are outstanding quality."</blockquote>
+        <figcaption><strong>Luca M.</strong><span>Sports Retailer — Italy</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" id="faq" style="background:var(--surface);">
-  <div class="container">
-    <div class="section-tag"><div class="accent-bar"></div> FAQ</div>
-    <h2 class="section-h">COMMON<br>QUESTIONS</h2>
-    <div class="faq-grid">
+<section class="section faq" id="faq">
+  <div class="container container--narrow">
+    <div class="section-head section-head--center reveal">
+      <p class="section-tag"><b>08</b> FAQ</p>
+      <h2 class="section-title">GOOD QUESTIONS,<br>STRAIGHT <span class="stroke stroke--red">ANSWERS.</span></h2>
+    </div>
+
+    <div class="faq-list reveal">
       <div class="faq-item">
-        <div class="faq-q">What is the minimum order quantity?</div>
-        <div class="faq-a">We offer flexible MOQs depending on the product. Sample orders of as few as 1–5 pieces are welcome. For bulk orders, MOQ typically starts at 25–50 units per style. Contact us to discuss your specific requirements.</div>
+        <button class="faq-q" aria-expanded="false" data-hover>
+          <span>What is the minimum order quantity?</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><p>We offer flexible MOQs depending on the product. Sample orders of as few as 1–5 pieces are welcome. For bulk orders, MOQ typically starts at 25–50 units per style. Contact us to discuss your specific requirements.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Do you provide free design mockups?</div>
-        <div class="faq-a">Yes — always. Our design team creates detailed digital mockups of your product at no cost before any order is placed. You approve the design before we produce a single sample.</div>
+        <button class="faq-q" aria-expanded="false" data-hover>
+          <span>Do you provide free design mockups?</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><p>Yes — always. Our design team creates detailed digital mockups of your product at no cost before any order is placed. You approve the design before we produce a single sample.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How long does sample production take?</div>
-        <div class="faq-a">Physical samples are typically ready within 7–10 business days after design approval. Rush samples can be arranged in some cases — ask us about lead times when you enquire.</div>
+        <button class="faq-q" aria-expanded="false" data-hover>
+          <span>How long does sample production take?</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><p>Physical samples are typically ready within 7–10 business days after design approval. Rush samples can be arranged in some cases — ask us about lead times when you enquire.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Can I use my own branding on the products?</div>
-        <div class="faq-a">Absolutely. We specialise in private label manufacturing. Your logo, labels, hang tags, and packaging can all be customised. We produce the full brand experience, not just the garment.</div>
+        <button class="faq-q" aria-expanded="false" data-hover>
+          <span>Can I use my own branding on the products?</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><p>Absolutely. We specialise in private label manufacturing. Your logo, labels, hang tags, and packaging can all be customised. We produce the full brand experience, not just the garment.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Which countries do you ship to?</div>
-        <div class="faq-a">We ship globally. We work with trusted freight partners offering DHL, FedEx, and sea freight options depending on order size and your destination. We handle all export documentation.</div>
+        <button class="faq-q" aria-expanded="false" data-hover>
+          <span>Which countries do you ship to?</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><p>We ship globally. We work with trusted freight partners offering DHL, FedEx, and sea freight options depending on order size and destination. We handle all export documentation.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Why are there no prices on the website?</div>
-        <div class="faq-a">Pricing depends on your product specifications, customisation requirements, and order quantity. We prefer to give you an accurate, personalised quote rather than a misleading general price. Reach out — it's quick and there's no obligation.</div>
+        <button class="faq-q" aria-expanded="false" data-hover>
+          <span>Why are there no prices on the website?</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a"><p>Pricing depends on your product specifications, customisation requirements, and order quantity. We prefer to give you an accurate, personalised quote rather than a misleading general price. Reach out — it's quick and there's no obligation.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<div class="cta-band">
-  <div class="cta-band-inner">
-    <h2 class="cta-band-title">READY TO BUILD YOUR LINE?</h2>
-    <p class="cta-band-sub">Get in touch today for free mockups, sample pricing, and expert advice on building the perfect sportswear range for your brand or team.</p>
-    <div class="cta-band-row">
-      <button class="btn-white" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">✉ Request a Quote</button>
-      <a class="btn-white-outline" href="https://wa.me/923001234567">💬 WhatsApp Us Now</a>
+<!-- CTA MARQUEE BAND -->
+<a class="cta-band" href="#contact" aria-label="Go to contact form">
+  <div class="marquee-track marquee-track--cta" aria-hidden="true">
+    <div class="marquee-group">
+      <span>Let's Build Your Line</span><i>→</i><span class="fancy">Free Mockups</span><i>→</i><span>Let's Build Your Line</span><i>→</i><span class="fancy">Low MOQs</span><i>→</i>
+    </div>
+    <div class="marquee-group">
+      <span>Let's Build Your Line</span><i>→</i><span class="fancy">Free Mockups</span><i>→</i><span>Let's Build Your Line</span><i>→</i><span class="fancy">Low MOQs</span><i>→</i>
     </div>
   </div>
-</div>
+</a>
 
 <!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="section-tag" style="margin-bottom:20px;"><div class="accent-bar"></div> Get in Touch</div>
-      <div class="contact-info-title">LET'S DISCUSS<br>YOUR ORDER</div>
-      <p class="contact-info-body">No automated forms, no waiting. Reach us directly via email or WhatsApp and we'll get back to you within 24 hours — usually much sooner. We're here to help you get exactly what you need.</p>
-      <div class="contact-channels">
-        <div class="contact-channel whatsapp">
-          <div class="channel-icon">💬</div>
-          <div>
-            <div class="channel-label">WhatsApp (Fastest)</div>
-            <div class="channel-value">+92 300 123 4567</div>
-          </div>
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-head reveal">
+          <p class="section-tag"><b>09</b> Get in Touch</p>
+          <h2 class="section-title">LET'S TALK <span class="stroke">GEAR.</span></h2>
+          <p class="section-note">No automated systems, no waiting. Reach us directly via email or WhatsApp and we'll get back to you within 24 hours — usually much sooner.</p>
         </div>
-        <div class="contact-channel email">
-          <div class="channel-icon">✉</div>
-          <div>
-            <div class="channel-label">Email</div>
-            <div class="channel-value">info@enigmasports.com</div>
-          </div>
-        </div>
-        <div class="contact-channel">
-          <div class="channel-icon" style="opacity:0.5;">📍</div>
-          <div>
-            <div class="channel-label">Factory Location</div>
-            <div class="channel-value">Sialkot, Punjab, Pakistan</div>
-          </div>
-        </div>
-        <div class="contact-channel">
-          <div class="channel-icon" style="opacity:0.5;">🕐</div>
-          <div>
-            <div class="channel-label">Response Time</div>
-            <div class="channel-value">Within 24 hours</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="contact-form-wrap">
-      <div class="contact-form-title">Send an Enquiry</div>
-      <p class="contact-form-sub">Fill in your details and we'll come back to you with a quote, free mockup, or answers to your questions.</p>
+        <ul class="contact-channels reveal">
+          <li>
+            <a href="https://wa.me/923001234567" data-hover>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span><small>WhatsApp (fastest)</small><strong>+92 300 123 4567</strong></span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@enigmasports.com" data-hover>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span><small>Email</small><strong>info@enigmasports.com</strong></span>
+            </a>
+          </li>
+          <li>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+              <span><small>Factory</small><strong>Sialkot, Punjab, Pakistan</strong></span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span><small>Response time</small><strong>Within 24 hours</strong></span>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name</label>
-          <input class="form-input" type="text" placeholder="John" />
+      <form class="contact-form reveal" id="enquiry-form" novalidate>
+        <h3>Send an Enquiry</h3>
+        <p class="form-sub">Fill in your details and we'll come back with a quote, free mockup, or answers to your questions.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-first">First Name</label>
+            <input id="f-first" name="first_name" type="text" placeholder="John" autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label for="f-last">Last Name</label>
+            <input id="f-last" name="last_name" type="text" placeholder="Smith" autocomplete="family-name" />
+          </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Last Name</label>
-          <input class="form-input" type="text" placeholder="Smith" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email Address</label>
-        <input class="form-input" type="email" placeholder="john@yourcompany.com" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">WhatsApp / Phone</label>
-        <input class="form-input" type="tel" placeholder="+1 555 000 0000" />
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Product of Interest</label>
-          <select class="form-select">
-            <option value="">Select a product</option>
-            <option>American Football Uniforms</option>
-            <option>Baseball Uniforms</option>
-            <option>Basketball Uniforms</option>
-            <option>Soccer Kits</option>
-            <option>Tracksuits</option>
-            <option>Sports Bags</option>
-            <option>Multiple Products</option>
-          </select>
+          <label for="f-email">Email Address</label>
+          <input id="f-email" name="email" type="email" placeholder="john@yourcompany.com" autocomplete="email" />
         </div>
         <div class="form-group">
-          <label class="form-label">Estimated Quantity</label>
-          <select class="form-select">
-            <option value="">Select range</option>
-            <option>1–10 (Sample)</option>
-            <option>11–50</option>
-            <option>51–200</option>
-            <option>200–500</option>
-            <option>500+</option>
-          </select>
+          <label for="f-phone">WhatsApp / Phone</label>
+          <input id="f-phone" name="phone" type="tel" placeholder="+1 555 000 0000" autocomplete="tel" />
         </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Message / Requirements</label>
-        <textarea class="form-textarea" placeholder="Tell us about your design ideas, budget, deadline, or any questions you have..."></textarea>
-      </div>
-      <div class="form-cta-row">
-        <button class="btn-red">✉ Send Enquiry</button>
-        <a class="btn-outline" href="https://wa.me/923001234567">💬 WhatsApp Instead</a>
-      </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-product">Product of Interest</label>
+            <select id="f-product" name="product">
+              <option value="">Select a product</option>
+              <option>American Football Uniforms</option>
+              <option>Baseball Uniforms</option>
+              <option>Basketball Uniforms</option>
+              <option>Soccer Kits</option>
+              <option>Tracksuits</option>
+              <option>Sports Bags</option>
+              <option>Multiple Products</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-qty">Estimated Quantity</label>
+            <select id="f-qty" name="quantity">
+              <option value="">Select range</option>
+              <option>1–10 (Sample)</option>
+              <option>11–50</option>
+              <option>51–200</option>
+              <option>200–500</option>
+              <option>500+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-msg">Message / Requirements</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="Tell us about your design ideas, budget, deadline, or any questions you have..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="submit" data-hover>
+            <span>Send Enquiry</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 L17 7 M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <a class="btn btn--ghost" href="https://wa.me/923001234567" data-hover><span>WhatsApp Instead</span></a>
+        </div>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
     </div>
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-diamond"><div class="footer-diamond-inner"></div></div>
-        <span class="footer-brand-name">ENIGMA SPORTS</span>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-tagline">Premium custom sportswear manufacturer. Supplying clubs, brands, and distributors worldwide <em class="fancy">since 2010.</em></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook" data-hover><svg viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9a1 1 0 0 1 0 0z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+          <a href="#" aria-label="Instagram" data-hover><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn" data-hover><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 10v7M8 7v.1M12 17v-4a2 2 0 0 1 4 0v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></a>
+          <a href="https://wa.me/923001234567" aria-label="WhatsApp" data-hover><svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
-      <p class="footer-tagline">Premium custom sportswear manufacturer. Supplying clubs, brands, and distributors worldwide since 2010.</p>
-      <div class="footer-socials">
-        <div class="social-btn">f</div>
-        <div class="social-btn">in</div>
-        <div class="social-btn">ig</div>
-        <div class="social-btn">wa</div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#products" data-hover>American Football</a>
+        <a href="#products" data-hover>Soccer Kits</a>
+        <a href="#products" data-hover>Basketball Uniforms</a>
+        <a href="#products" data-hover>Baseball Uniforms</a>
+        <a href="#products" data-hover>Tracksuits</a>
+        <a href="#products" data-hover>Sports Bags</a>
       </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Products</div>
-      <div class="footer-links">
-        <a class="footer-link" href="#products">American Football</a>
-        <a class="footer-link" href="#products">Baseball Uniforms</a>
-        <a class="footer-link" href="#products">Basketball Uniforms</a>
-        <a class="footer-link" href="#products">Soccer Kits</a>
-        <a class="footer-link" href="#products">Tracksuits</a>
-        <a class="footer-link" href="#products">Sports Bags</a>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about" data-hover>About Us</a>
+        <a href="#process" data-hover>Our Process</a>
+        <a href="#capabilities" data-hover>Capabilities</a>
+        <a href="#customisation" data-hover>Customisation</a>
+        <a href="#faq" data-hover>FAQ</a>
       </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <div class="footer-links">
-        <a class="footer-link" href="#about">About Us</a>
-        <a class="footer-link" href="#process">Our Process</a>
-        <a class="footer-link" href="#capabilities">Capabilities</a>
-        <a class="footer-link" href="#customisation">Customisation</a>
-        <a class="footer-link" href="#faq">FAQ</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <div class="footer-links">
-        <a class="footer-link" href="mailto:info@enigmasports.com">✉ info@enigmasports.com</a>
-        <a class="footer-link" href="https://wa.me/923001234567">💬 WhatsApp Us</a>
-        <a class="footer-link" href="#contact">Enquiry Form</a>
-      </div>
-      <div style="margin-top:24px;padding:16px 18px;background:var(--accent-subtle);border-left:2px solid var(--accent);">
-        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Office Hours</div>
-        <div style="font-size:13px;color:var(--text-secondary);">Mon–Sat: 9am–6pm PKT</div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@enigmasports.com" data-hover>info@enigmasports.com</a>
+        <a href="https://wa.me/923001234567" data-hover>WhatsApp Us</a>
+        <a href="#contact" data-hover>Enquiry Form</a>
+        <p class="footer-hours"><b>Office Hours</b>Mon–Sat: 9am–6pm PKT</p>
       </div>
     </div>
   </div>
-  <div style="border-top:1px solid var(--border);">
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2025 Enigma Sports. All rights reserved.</div>
-      <div class="footer-bottom-links">
-        <a class="footer-bottom-link" href="#">Privacy Policy</a>
-        <a class="footer-bottom-link" href="#">Terms</a>
-        <a class="footer-bottom-link" href="#">Sitemap</a>
-      </div>
-      <div class="footer-location">🌐 Serving Clients Worldwide</div>
+
+  <div class="footer-giant" aria-hidden="true">ENIGMA SPORTS</div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2026 Enigma Sports. All rights reserved.</span>
+      <span class="footer-loc">Made in Sialkot — Worn Worldwide</span>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>

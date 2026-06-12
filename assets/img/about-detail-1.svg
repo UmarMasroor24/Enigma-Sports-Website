@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#131316"/>
+  <g stroke="#1A1A1E" stroke-width="1"><line x1="90" y1="0" x2="90" y2="800"/><line x1="180" y1="0" x2="180" y2="800"/><line x1="270" y1="0" x2="270" y2="800"/><line x1="360" y1="0" x2="360" y2="800"/><line x1="450" y1="0" x2="450" y2="800"/><line x1="540" y1="0" x2="540" y2="800"/><line x1="630" y1="0" x2="630" y2="800"/><line x1="720" y1="0" x2="720" y2="800"/><line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/><line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="450" x2="800" y2="450"/><line x1="0" y1="540" x2="800" y2="540"/><line x1="0" y1="630" x2="800" y2="630"/><line x1="0" y1="720" x2="800" y2="720"/></g>
+  <g stroke="#1E1E23" stroke-width="1">
+    <line x1="0" y1="0" x2="800" y2="800"/>
+    <line x1="800" y1="0" x2="0" y2="800"/>
+  </g>
+  <g transform="translate(232,200) scale(14.00)" fill="none" stroke="#D9FF3F" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"><path d="M4 20c8 0 8-16 16-16M4 4c8 0 8 16 16 16"/></g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="692" fill="#D9FF3F" font-size="15" font-weight="bold" letter-spacing="5">PLACEHOLDER</text>
+    <text x="48" y="734" fill="#F4F1EC" font-size="30" font-weight="bold" letter-spacing="1">STITCHING DETAIL</text>
+    <text x="48" y="764" fill="#6E6A66" font-size="15">Replace with a production close-up</text>
+  </g>
+  <rect x="1" y="1" width="798" height="798" fill="none" stroke="#232328" stroke-width="2"/>
+</svg>
