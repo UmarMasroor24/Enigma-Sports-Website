@@ -159,6 +159,16 @@
     });
   });
 
+  // Recompute open FAQ panel height on resize (fixed px max-height would clip on reflow)
+  var faqResizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(faqResizeTimer);
+    faqResizeTimer = setTimeout(function () {
+      var open = document.querySelector(".faq-item.open .faq-a");
+      if (open) open.style.maxHeight = open.scrollHeight + "px";
+    }, 150);
+  }, { passive: true });
+
   /* ---------- Contact form (UI-only) ---------- */
   var form = document.getElementById("enquiry-form");
   var note = document.getElementById("form-note");
