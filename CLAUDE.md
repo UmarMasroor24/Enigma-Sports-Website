@@ -49,7 +49,7 @@ Deploying: push to GitHub; GitHub Pages serves directly from the repository root
 | `--volt-dim` | `rgba(217,255,63,0.07)` | Volt note/callout backgrounds |
 | `--text` | `#F4F1EC` | Body text |
 | `--text-2` | `#A8A49E` | Muted text |
-| `--muted` | `#6E6A66` | Faint text |
+| `--muted` | `#807C76` | Faint text |
 
 **Accent rule (user-set):** red is for actions (buttons, links, hover states); volt green is for information (section-tag numbers, stat values/suffixes, list icons, kickers, FAQ plus icons, note callouts). Keep this split when adding components so the two accents don't blur together.
 
