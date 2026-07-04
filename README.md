@@ -29,8 +29,10 @@ enigma-sports-website/
     │   ├── site.js         # Interactions for the redesigned index.html
     │   ├── main.js         # Scripts for index_old.html
     │   └── styleguide.js   # Tab switching for styleguide.html
-    └── img/                # Placeholder mockup images (themed SVGs)
+    └── img/                # Placeholder mockup images (themed SVGs) + favicon.svg
 ```
+
+The single-page site runs: hero → products → **lookbook** (jersey mockup gallery) → process → why → capabilities → customisation → testimonials → FAQ → contact.
 
 ## Tech Stack
 
